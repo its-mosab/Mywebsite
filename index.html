@@ -1,1 +1,94 @@
-hl
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+	<style>
+	*{
+		font-family:sans-serif;
+	}
+	body{
+		background:black;
+		justify-content:center;
+		align-items:center;
+		margin-top:0;
+		direction:rtl;
+	}
+	.b{
+	 	width:200px;
+	 	height:55px;
+	 	position:relative;
+	 	padding: 15px 0;
+	 	text-align:center;
+	 	border: 2px solid #3eff37;
+	 	margin:10px 10px;
+	 	font-weight:blod;
+	 	background:transparent;
+	 	color:#fff; 
+	 	cursor:pointer;
+	 	overflow:hidden;
+	 	text-transform:uppercase;
+	}
+	span{
+		background:#3eff37;
+		height:100%;
+		width:0;
+		position:absolute;
+		left:0;
+		bottom:0;
+		z-index: -1;
+		transition:0.5s;
+		
+	}
+	button:hover span{
+		width:100%;
+	}
+	select:hover span {
+		width:100%;
+	}
+	</style>
+</head>
+<body>
+
+    <video autoplay muted controls preload width="100%" id="video">
+        <source src=" https://video-weaver.fra02.hls.live-video.net/v1/playlist/CrwFIt_0LLc2IMki6fJfS6XB64Q0Ct_G_e9ExqYeOsfplwltMQ7olIXg7IOnKMYDlL1u4R-uGyJhpTeZE8R24QnAbrSJSBbiAfK1oSRlVrGkCPhATSJzRsCVw6A439PITgvJVu_LKHqUbSfkDeu-QdNi40yRRrpi7T5nG8jeibc8AvG8656-A1ekKkO_6r8tOPOB0pKEQgjhcvq9mPAlZpamIDjfjxGbF2OR3TUFq2loIl5fDyQeVT8BsH2XN64dKlf92xEy1fL4hAjghA2sazOsoBS3ie1zwi1GkFV4MHsGkHQgMgNrPcpyYxMoZZVc-ZMRVzxrArvsONk-6M_rvpGFHACxl4RZpQWJYgEWJS5ZQlN0XPxYNYCapD6NIouGeSDcA8KGMGjlTFanh3vJveSaIvMy9rRhVhrt2cX030_OJTXribz3mACv3RAutz4fFHpeC9q679GNNZXh7asi_rQWGfGJuop-I4O5bI_lSGEXhkIM2a92IS5zbyUrrNEKGPQ6hTfwiCW8OZG4pdNV2erJgilCLgfgiXFYQ2dpNzfOxfm9VEmzfnecAlZVe-pGSSznDZdAVG6a9g7WUTqpE9FfwOEC7Nv0CtXSK-cQbWbhdUNK9iNvjeSMls8wDSntc4fDMlNSHXdqEHNhEl9JygSKc_ubRnQfjX6bXBXCl9keu3EcYoDXOcUW8foUkUd1F-dYCoKRdhzX4QEiUKRUeGxsWXkIx27bGzzvfYgePx0peatcS9Bf2gRIuLkKF3EjAthYGC4JgtC52WtE9D55nAW9mr9SITK-Vmh1rps0L6wnbkd8ei51dPg06ProWQNifRmleopP01dotVspKJSes6zcjasSU0RcbtL6vgyxx7DzKScTco_fRUMHTvmJxJh01VYRO_inGuqN0P9-vuDhTIG9xDaRgpNA296Ytx8r0RoMRCTjCLm0a56MRkUlIAEqCWV1LXdlc3QtMjChBw.m3u8 "  type="video/mp4">
+        تعذر تشغيل الفيديو.
+    </video> 
+    <select class="b" id="qualitySelect">
+        <option value="1080">1080p60</option>
+        <option value="720">720p60</option>
+        <option value="480">480p</option>
+        <option value="360">360p</option>
+        <option value="160">160p</option>
+
+    </select>
+
+    <button type="button" class="b" onclick="changeQuality()"> تغيير<span></span></button>
+   	
+    <script>
+    	
+        function changeQuality() {
+            var qualitySelect = document.getElementById("qualitySelect");
+            var video = document.querySelector("video");
+            var selectedQuality = qualitySelect.value;
+
+             selectedQuality === "1080"?
+                video.src = " https://video-weaver.fra02.hls.live-video.net/v1/playlist/CrwFIt_0LLc2IMki6fJfS6XB64Q0Ct_G_e9ExqYeOsfplwltMQ7olIXg7IOnKMYDlL1u4R-uGyJhpTeZE8R24QnAbrSJSBbiAfK1oSRlVrGkCPhATSJzRsCVw6A439PITgvJVu_LKHqUbSfkDeu-QdNi40yRRrpi7T5nG8jeibc8AvG8656-A1ekKkO_6r8tOPOB0pKEQgjhcvq9mPAlZpamIDjfjxGbF2OR3TUFq2loIl5fDyQeVT8BsH2XN64dKlf92xEy1fL4hAjghA2sazOsoBS3ie1zwi1GkFV4MHsGkHQgMgNrPcpyYxMoZZVc-ZMRVzxrArvsONk-6M_rvpGFHACxl4RZpQWJYgEWJS5ZQlN0XPxYNYCapD6NIouGeSDcA8KGMGjlTFanh3vJveSaIvMy9rRhVhrt2cX030_OJTXribz3mACv3RAutz4fFHpeC9q679GNNZXh7asi_rQWGfGJuop-I4O5bI_lSGEXhkIM2a92IS5zbyUrrNEKGPQ6hTfwiCW8OZG4pdNV2erJgilCLgfgiXFYQ2dpNzfOxfm9VEmzfnecAlZVe-pGSSznDZdAVG6a9g7WUTqpE9FfwOEC7Nv0CtXSK-cQbWbhdUNK9iNvjeSMls8wDSntc4fDMlNSHXdqEHNhEl9JygSKc_ubRnQfjX6bXBXCl9keu3EcYoDXOcUW8foUkUd1F-dYCoKRdhzX4QEiUKRUeGxsWXkIx27bGzzvfYgePx0peatcS9Bf2gRIuLkKF3EjAthYGC4JgtC52WtE9D55nAW9mr9SITK-Vmh1rps0L6wnbkd8ei51dPg06ProWQNifRmleopP01dotVspKJSes6zcjasSU0RcbtL6vgyxx7DzKScTco_fRUMHTvmJxJh01VYRO_inGuqN0P9-vuDhTIG9xDaRgpNA296Ytx8r0RoMRCTjCLm0a56MRkUlIAEqCWV1LXdlc3QtMjChBw.m3u8 "
+              :selectedQuality === "720"?
+                video.src = " https://video-weaver.fra02.hls.live-video.net/v1/playlist/CroF3xCT-WfTurpYTgCNsE7dCORt7e59A4Vd6wvlP-ijVI61XFVwzlxuUI4QbIlg001eZIM0TKfa8s-a2GHCEBM576iDrHgm7R8XAP850m44s8VoySsd4Y4jPOvQQbkARsWgzlcCOAbUYhxUIHO5xT9k2IzSYOviXpeO3nuP7_2dn1Fddm2_PAaYbbi0t8RQSpJ89_c45oE9xp_IlTXjZYWrfmiCVqMkbvBHRLrz-QmCIarb8MpL3K7B4zAnP_KDHiEuW10z3ZXvXpZhD6qJ2e1YYNSPf8B70oK_rE4f8vVwK-z67sZ6HymDf_lYb7BD0EwqslMq3RwQiDxLc5_kSgdq-LDi2fjWmxPU05Bh0VuiilnIP9IGmxW7nW42yR-G2zbg4DjRLy-RYT-vkJGzNiOZZxAqA2VY5U2gOfw-LjjeMsebPoh8wwOmdf08V564nZ-3lScB5rkqkc7gjFM_9Dj5MivpRNKmjUxhOCM6HtNW7eESYYhn6w_Klli8z_pIY-89dP3fXJx-wWPdaUE1rpYjz3LsJvkN1pBw9SUTgbRwMqZjC0oM_FiP8JkE9luJm25kKmmo0pU-MVcrC58MDP1aLHWYvFO1QBEW5jhrsGFkg8c3N6tWhsP1Z-THwPYeTI9H49pCkj5IxhDMAe-K6zfd2Lp0h09g2ylIH-K-mt5094h9SswRSpKadl3G_k2d_96GTjU7H2EzDsgg0P-Ll2xJL-krtPqZ8-LKKek7IG9Wh_qaEpIS6mbZh-95tn791G4wwidWJWZySaRqrGWhfHJczb1XC-Xo933BM1WxnIpjdFDbKc72cZFghtsUQdowSU7zgLtENRne5h198L0Kgx8mB0DZIDaeKpljkk4pX07GEwnNsPuCVgmOS4rKUdNp6pwo5hAsqbPdsEqY_Dkn32BFer9wxu0XvK7f3mAaDHIZsqaKCDtjRjBB7SABKglldS13ZXN0LTIwoQc.m3u8 "
+			  :selectedQuality === "480"?
+  	  		    video.src = " https://video-weaver.fra02.hls.live-video.net/v1/playlist/CroFnVom2aKMBDNlDKcfWNOodT6uJRkU3C-A2RQsjTtNS6n4gle4IZKQsiFDTeWWC12w92XYe8d9_I0bXS5N9vF4C--0zbSEWw5Hax6Xo4ArBa51WU3mwRSR6noygJpzuC8uc2fT2ZJ01LLcRQSVRcThpWBo5C1Dbp-XMWTDLwvCPzAnt_JSpv1gbtCgqor5ywfZmn0QO4Dk8hmqjDpOqmfHR6OACBeX7jO-DTO-y2lhYuyn5C_tcrX71c82LlDtSt5FdOBmkDvx-5DtJZl5SkFxB8kzNM_M6J3u1qQ4aYBoiNkDlmZMia-RYnzNdOOrxK0ZKxCVk6k44zlJ64Ilc0IqAHGvVcfOzQZLbB3o4YfoB0Di7CFdbisqLk3ikhpJipIkBUd72_Jmky6HgLk_2lx6S1FPGN7A5A9DG3rQcHWaWiohdMQuM4OwkuKcLvVSQTNRf-iONj-t9dUVFx2vvxof0TLTuc3IGwZ7AdduvXM1gKQrkyYaCoffoKhkiboB-dM1yRHJq28edUUwAUXcnruTdGh-onQ520AF39qKI4Ao7OR4tyoyzPDuz5i7i3wR4SDBTtusTnNmtJHGEKF7LVU7ilWKOTyDtdWe-5Wq6x5_TddNGdmBNLtfH8K0wEhnUT48Cj-W0Xc1xT1NZ72Rr927d_QyEuNcwXSl8GOJTEUNTo6sO4QnYC9pubH0QWt1n2LGnjogw2v8YNGLnOo6FL_6BaYYQHEJZ9BeTxyv3lB4xnJYAUzmrDH4jhSZXsR1_HI5tdplvLyWTrEvAsitan71fIXRhTRkCw-0MPMVxrsY-l7BovkwtZgtpRYg5VpbAOcMZjr95zy-eRt3cFLMyzx0t-64P5Ce0AR_NQyD_sGcR8dwdTE5f5ZiavJqa0ROUmSikn5RSWuGXddDeGDwmX09ZRUpzIgDS15ncSYaDAeNk_WZU61yD8yGeyABKglldS13ZXN0LTIwoQc.m3u8 "
+			  :selectedQuality === "360"?
+  		  		video.src = " https://video-weaver.fra02.hls.live-video.net/v1/playlist/CroFnX__NPba1a19c0AOpfJp7H4MoSw5KcHg6L3qx3x-gzjk8kcAlz21BMJLoAgVtaPxNDIwo6BRUqncD0fjlHpCVIdYQnB84sFZ2SkM55YP6EaZJ6gUUqj57S_KP4tBOCoMwHCKt2iKQOSw9Hbvqg8KTL87h96quSechpnzd0uLIovgNLJQLrWV1rENHBH4ukNw5UOGN0u61n3A1Izha1CbSixsLV2Fz6sm006waHHfsPFXBdzUDT3m3KzEXf70Q1G6Kp4-aXzT7ZwZ86ZIqBZvpt-BulU4aUQWKuxnxtDwmRe9a7pNiz7U6RV5yPi2Q9GNaQyJfrQv4txLfW-jJA0vuW3aM8LOCYZCR3VCOPf2fUog_fjebMqpG5IDepGYNfwY607CIIwO0KxBYyVG2DyRW19u2HFkd1-lXGB3izhmUOr0t9aCW3_Llgw3ATUYh8-FvEuAalutdad6rWhB4VDkYtR6jr3s5zoSyrQCYVl9uq8CUxfR6-aJydHej6fCiVxa7OzpLeXbtwzJit0Qn5zceYwTI66blKj7-R4uWGx4KPwhWW3xyMptCqvLPLJRQCLBExwELU1YBf_GYCpbJtzFCx14_5iXQtp2rOmYoJO9zuVrJesggYkxze1Utk2kBznHz6dvPRHbZ_wfS906SO9JE05h3YkcMzh3KN3B3YZKjGfbScv4_Qbg-5Wsi7t1AWtw9-NrP5-2-zLpGFOE_8ctTvBoWg6uJJ68uWDkKT97VybF87UEQ7uRdCQQtPhsPDf1XYkSDEKmzXSQY9mQ6ujs5Yi6HDKcnQGhAXENrFC8oj5eMQfj3tG14z6e5EaxHOw98JlS4yXbMiY77ec0g9Xs3IiJVQjNEtzNbHMo_3LwUGYdn7UKZhi7p87HH5pafHvcdAi0di37OBKJh7CLWmH5C_C84SlYKqfQPA0aDHyV1JB5L62ZrqIZnyABKglldS13ZXN0LTIwoQc.m3u8 "
+  	  		  :selectedQuality === "160"?
+  	  			video.src = " https://video-weaver.fra02.hls.live-video.net/v1/playlist/CroFN6tFGNJWvnNwS2DoSFJNL_y8KZ2MSgsUL8kGt78t9hIGxnNUR9JDLzS0QgezA8K06UocKKgjwh5SSxvMOl_07NQcIZlcmTiMV5BhZ6mTlJCe6qMOLFJH7lACN2mxz7iQRFr9XT1vxUK7bY1vAHZgqaQFTtei9NhB_yNaMW6XAlyq_wdSJhaNNOq7NFVRO5DD0iGMCypSr2IDHPIu0rL2XxNOK0RU2jOTvUyPV3WZS7TQfGgJjTZZGlHCL8AM24X-9dNqJcula8BqyeaLmRnNITv2YabnoFM4leBOINPV3bSxd2_nhIxvQ9soRljQr8foAxGeBoiYAFHTs_I0uCgX4hwKhMMARynGcsa0pXG4pDKjSh63y1QWG7Ix6oKnppupaktFj-fha6El4OEsH3FPys8GqnnrplPohpUolPo4gLalQZf9NcW3wpr7En-068qVBybIhLn0TEoo7ov2-TmJLU99HgrjQ9iWjcJ64Qvtho1mzMmpVahWHMvyaIsHEaGvRPHV9XtUy9D5bthAMdj5ZfzXWJX-YZVICV2FbJ-F57kD-NvQO86zJHx5-bRrC62YzNCMP_Y8tRUphGcDPIEE8FK1yOknq8Ft7MecxYpGV1RnrVIUJip-wQnVuPiE_lxXClM2_5EHF8RdH7BRCcGCEz496XeYvWWLchuOkOtmL5HA_I8QgznYfgqoEpbmmY6fEJ2gSzY1Uqi1_z1jT0l1QHg4PZPP84C627Jqs_ewYJqnMy8hIFaPW_zVhdLoQpx6faSDsR0A81is-OiAothTnTcKO31T6-aoAwdM0W-asFkKIn_kPqY8RIIad_iizzM6mo6Awz_Rb72JAZc5ghLP2Ic6vg40w-IjQUW-xGIgUBMkQyB03w8A5-uzsKau6GKvFgqNbD429VC0a-8EEAKhstaEVL-jIDeA2bAaDP1lDDBjy8WBGVhouiABKglldS13ZXN0LTIwngc.m3u8 "
+  	  		  : document.write(EROR)
+				
+ }
+    </script>
+</body>
+</html>
