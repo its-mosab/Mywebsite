@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthProfiler</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700; /* Change color on hover */
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px); /* Move section up on hover */
+        }
+
+        h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            clear: both;
+        }
+
+        .site-definition {
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+            color: #666;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            animation-name: fadeIn;
+            animation-duration: 1s;
+        }
+        .calculator-section {
+        	text-decoration: none;
+        	color: #333;
+        }
+        
+        .calculator-section:hover {
+        	background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <header class="fadeIn">
+        <h1>HealthProfiler</h1>
+        <nav>
+            <ul>
+                <li><a href="height-prediction/height-prediction.html">Height Prediction</a></li>
+                <li><a href="BMI Calculator/BMI-Calculator.html">BMI Calculator</a></li>
+                <li><a href="Calorie/Calorie.html">Calorie Calculator</a></li>
+                <li><a href="Weight Calculator/Weight-Calculator.html">Weight Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main >
+        <a href="height-prediction/height-prediction.html" class="calculator-section">
+        <section  id="height-prediction" class="fadeIn">
+            <h2>Height Prediction Calculator</h2>
+        </section></a>
+		<a href="BMI Calculator/BMI-Calculator.html" class="calculator-section">
+        <section id="bmi-calculator" class="fadeIn">
+            <h2>BMI Calculator</h2>
+        </section></a>
+        <a href="Calorie/Calorie.html" class="calculator-section">
+        <section id="calorie-calculator" class="fadeIn">
+            <h2>Calorie Calculator</h2>
+        </section></a>
+        <a href="Weight Calculator/Weight-Calculator.html" class="calculator-section">
+        <section id="weight-calculator" class="fadeIn">
+            <h2>Weight Calculator</h2>
+        </section></a>
+    </main>
+    <footer class="fadeIn">
+        <p>&copy; 2024 HealthProfiler</p>
+    </footer>
+    <div class="site-definition fadeIn">
+        <p>HealthProfiler is a website dedicated to providing easy-to-use calculators for human health. Whether you want to predict your height, calculate your BMI, determine your daily calorie intake, or find your appropriate weight based on height and age, HealthProfiler has you covered!</p>
+    </div>
+</body>
+</html>
